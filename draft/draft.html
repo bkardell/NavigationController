@@ -9,7 +9,7 @@
       For the three scripts below, if your spec resides on dev.w3 you can check them
       out in the same tree and use relative links so that they'll work offline,
      -->
-    <script src='respec.js' class='remove'></script>
+    <script src='//rawgithub.com/darobin/respec/develop/builds/respec-w3c-common-3.1.59.js' class='remove'></script>
     <script class='remove'>
        var respecConfig = {
           // specification status (e.g. WD, LCWD, NOTE, etc.). If in doubt use ED.
@@ -75,6 +75,13 @@
           // document unless you know what you're doing. If in doubt ask your friendly neighbourhood
           // Team Contact.
           wgPatentURI:  "",
+
+          localBiblio: {
+            "DOMPromise": "https://github.com/slightlyoff/DOMPromise/",
+            "Fetch": "http://fetch.spec.whatwg.org/#requests"
+
+
+          }
       };
     </script>
   </head>
@@ -100,7 +107,7 @@
             The IDL fragments in this specification must be interpreted as required for conforming IDL fragments, as described in the Web IDL specification. [[!WEBIDL]]
         </p>
         <p>
-            Some of the terms used in this specification are defined in [<a href="https://github.com/slightlyoff/DOMPromise/">Promises</a>], [<a href="http://fetch.spec.whatwg.org/#requests">Fetch</a>], [[!DOM-LEVEL-3-CORE]],
+            Some of the terms used in this specification are defined in [[DOMPromise]], [[Fetch]], [[!DOM-LEVEL-3-CORE]],
              [[!WEBWORKERS]]
         </p>
     </section>
