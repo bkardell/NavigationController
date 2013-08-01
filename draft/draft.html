@@ -4,17 +4,17 @@
   <head>
     <title>Navigation Controller Draft</title>
     <meta http-equiv='Content-Type' content='text/html;charset=utf-8'/>
-    <!-- 
+    <!--
       === NOTA BENE ===
       For the three scripts below, if your spec resides on dev.w3 you can check them
       out in the same tree and use relative links so that they'll work offline,
      -->
-    <script src='//dev.w3.org/2009/dap/ReSpec.js/js/respec.js' class='remove'></script>
+    <script src='respec.js' class='remove'></script>
     <script class='remove'>
        var respecConfig = {
           // specification status (e.g. WD, LCWD, NOTE, etc.). If in doubt use ED.
           specStatus:           "unofficial",
-          
+
           // the specification's short name, as in http://www.w3.org/TR/short-name/
           shortName:            "xxx-xxx",
 
@@ -51,7 +51,7 @@
               { name: "Alex Russell", url: "", company: "Google", companyURL: "http://www.google.com/" }
           ],
 
-          // authors, add as many as you like. 
+          // authors, add as many as you like.
           // This is optional, uncomment if you have authors as well as editors.
           // only "name" is required. Same format as editors.
 
@@ -59,16 +59,16 @@
           //    { name: "Your Name", url: "http://example.org/",
           //      company: "Your Company", companyURL: "http://example.com/" },
           //],
-          
+
           // name of the WG
           wg:           "In Charge Of This Document Working Group",
-          
+
           // URI of the public WG page
           wgURI:        "http://example.org/really-cool-wg",
-          
+
           // name (without the @w3c.org) of the public mailing to which comments are due
           wgPublicList: "spec-writers-anonymous",
-          
+
           // URI of the patent status for this WG, for Rec-track documents
           // !!!! IMPORTANT !!!!
           // This is important for Rec-track documents, do not copy a patent URI from a random
@@ -84,9 +84,9 @@
         Navigation Controllers are a new feature for the web platform that let a script persistently cache resources and handle all resource requests for an application -- even when the network isn't available. Putting it all together, Navigation Controllers give you a way to build applications that work offline.
       </p>
       <p>
-        Navigation Controllers provide the lower-level primitives that AppCache might be described in terms of. Navigation Controllers, then, are the explanation for the magic of AppCache.    
+        Navigation Controllers provide the lower-level primitives that AppCache might be described in terms of. Navigation Controllers, then, are the explanation for the magic of AppCache.
     </section>
-    
+
     <section>
         <h2>Goals</h2>
         <p>
@@ -100,7 +100,7 @@
             The IDL fragments in this specification must be interpreted as required for conforming IDL fragments, as described in the Web IDL specification. [[!WEBIDL]]
         </p>
         <p>
-            Some of the terms used in this specification are defined in [<a href="https://github.com/slightlyoff/DOMPromise/">Promises</a>], [<a href="http://fetch.spec.whatwg.org/#requests">Fetch</a>], [[!DOM-LEVEL-3-CORE]], 
+            Some of the terms used in this specification are defined in [<a href="https://github.com/slightlyoff/DOMPromise/">Promises</a>], [<a href="http://fetch.spec.whatwg.org/#requests">Fetch</a>], [[!DOM-LEVEL-3-CORE]],
              [[!WEBWORKERS]]
         </p>
     </section>
@@ -131,7 +131,7 @@
                   <dt>void waitUntil ( Promise f )</dt>
                   <dd>
                     Delay treating the installing controller until the passed Promise resolves
-                    successfully. This is primarily used to ensure that a NavigationController is not 
+                    successfully. This is primarily used to ensure that a NavigationController is not
                     active until all of the "core" Caches it depends on are populated.
                     <br>
                     TODO: what does the returned promise do differently to the one passed in?
@@ -148,7 +148,7 @@
                   </dd>
                   <dt>void replace ( )</dt>
                   <dd>
-                    Ensures that the controller is used in place of existing controllers for the currently 
+                    Ensures that the controller is used in place of existing controllers for the currently
                     controlled set of window instances.
                     <br />
                     TODO: how does this interact with waitUntil? Does it automatically wait?
@@ -217,7 +217,7 @@
                                 <li>resolve the promise</li>
                                 <li>abort these steps</li>
                             </ul>
-                        </li> 
+                        </li>
 
                         <li>If no controller is in-waiting, and the current active controller's
                             url & scope matches url & scope
@@ -233,7 +233,7 @@
                                 <li>abort these steps</li>
                             </ul>
                         </li>
-                    
+
                         <li>Reject the promise if:
                             <ul>
                                 <li>the URL is not same-origin</li>
